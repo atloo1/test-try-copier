@@ -1,6 +1,6 @@
 # test-try-copier
 
-[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/atloo1/test-try-copier/ci.yaml)](https://github.com/atloo1/test-try-copier/actions/workflows/ci.yaml?query=branch%3Amain)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/atloo1/test-try-copier/ci.yml)](https://github.com/atloo1/test-try-copier/actions/workflows/ci.yml?query=branch%3Amain)
 [![Dynamic TOML Badge](https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fatloo1%2Ftest-try-copier%2Frefs%2Fheads%2Fmain%2Fpyproject.toml&query=%24.project.requires-python&label=python)](https://github.com/atloo1/test-try-copier/blob/main/pyproject.toml)
 [![Dynamic TOML Badge](https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fatloo1%2Ftest-try-copier%2Frefs%2Fheads%2Fmain%2Fpyproject.toml&query=%24.project.version&label=version)](https://github.com/atloo1/test-try-copier/blob/main/pyproject.toml)
 [![GitHub License](https://img.shields.io/github/license/atloo1/test-try-copier)](https://github.com/atloo1/test-try-copier/blob/main/LICENSE)
@@ -33,7 +33,7 @@ docker run --name test-try-copier test-try-copier
 uv run python -m src.test_try_copier.main
 ```
 
-## development
+## develop
 
 ### setup (requires [uv](https://docs.astral.sh/uv/getting-started/installation/))
 
