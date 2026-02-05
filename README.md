@@ -20,22 +20,22 @@ templated from https://github.com/atloo1/try-copier vTODO
 
 ## use
 
-### with [uv](https://docs.astral.sh/uv/getting-started/installation/)
-
-```
-uv run python -m src.test_try_copier.main
-```
-
-### with [Docker](https://docs.docker.com/get-started/get-docker/)
+### via [Docker](https://docs.docker.com/get-started/get-docker/)
 
 ```
 docker build . -t test-try-copier
 docker run --name test-try-copier test-try-copier
 ```
 
+### via Python (via [uv](https://docs.astral.sh/uv/getting-started/installation/))
+
+```
+uv run python -m src.test_try_copier.main
+```
+
 ## development
 
-### setup
+### setup (requires [uv](https://docs.astral.sh/uv/getting-started/installation/))
 
 ```
 git clone https://github.com/atloo1/test-try-copier
@@ -48,4 +48,10 @@ uv run pre-commit install
 
 ```
 uv run pytest
+```
+
+### update template (requires [copier](https://copier.readthedocs.io/en/stable/#installation), preferably via [uv](https://docs.astral.sh/uv/getting-started/installation/))
+
+```
+copier update --defaults --trust
 ```
