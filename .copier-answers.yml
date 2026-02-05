@@ -1,0 +1,13 @@
+_commit: '9754691'
+_src_path: https://github.com/atloo1/try-copier
+author_email: 15357562+atloo1@users.noreply.github.com
+author_name: atloo1
+containerize: true
+github_actions: true
+license: MIT
+project_description: test updating from try-copier
+project_name_kebab_case: test-try-copier
+project_python_min_version: '3.10'
+project_version: 0.1.0
+renovate: true
+testing: true

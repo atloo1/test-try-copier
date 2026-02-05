@@ -1,0 +1,49 @@
+name: ci
+
+on:
+  push:
+
+jobs:
+  all-in-one-job:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [
+          "3.10",
+          "3.11",
+          "3.12",
+          "3.13"
+          ]
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: "setup Python ${{ matrix.python-version }}"
+        uses: actions/setup-python@v5
+        with:
+          python-version: "${{ matrix.python-version }}"
+
+      - name: setup uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: cache pre-commit
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pre-commit/
+          key: pre-commit-4|${{ env.pythonLocation }}|${{ hashFiles('.pre-commit-config.yaml') }}
+          restore-keys: |
+            pre-commit-4|${{ env.pythonLocation }}|
+
+      - name: install project
+        run: uv sync --locked --all-extras --dev && uv pip install -e .
+
+      - name: run pre-commit
+        run: uv run pre-commit run --all-files
+
+      - name: run pytest
+        run: uv run pytest
